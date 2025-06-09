@@ -1,0 +1,51 @@
+{
+  "comming": "Comming Soon ⌛️",
+  "navigation": {
+    "bottom": {
+      "profile": "Profile",
+      "shop": "Shop",
+      "home": "Home",
+      "earn": "Earn",
+      "chat": "Chat"
+    },
+    "top": {
+      "state": "State",
+      "city": "City",
+      "distric": "Distric",
+      "building": "Building",
+      "office": "Office"
+    }
+  },
+  "properties": {
+    "title": "Properties",
+    "city": "City",
+    "distric": "Distric",
+    "rent_out": "Rent out",
+    "building": "Building",
+    "office": "Office",
+    "avarage": "Avarage square",
+    "tax": "Tax",
+    "wonder": "Wonder",
+    "distric_state": "State of distric",
+    "distric_ads": "Ads of distric",
+    "distric_prestige": "Prestige of distric",
+    "rent_price": "Rent price, per m2",
+    "earned": "Earned by distric",
+    "rating": "Rating of distric"
+  },
+  "profile": {
+    "wallet": "Your Wallet",
+    "crypto_wallet": "Crypto Wallet",
+    "balance": "Profile Balance",
+    "deposit_btn": "Deposit to an internal wallet",
+    "assets": "Assets"
+  },
+  "modals": {
+    "deposit": {
+      "title": "Deposit",
+      "label": "Crypto Wallet Balance",
+      "input_placeholder": "Enter amount for deposit",
+      "deposit_btn": "Deposit to an internal wallet"
+    }
+  }
+}

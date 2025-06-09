@@ -1,0 +1,51 @@
+{
+  "comming": "Скоро будет ⌛️",
+  "navigation": {
+    "bottom": {
+      "profile": "Профиль",
+      "shop": "Магазин",
+      "home": "Главная",
+      "earn": "Бонус",
+      "chat": "Чат"
+    },
+    "top": {
+      "state": "Штат",
+      "city": "Город",
+      "distric": "Район",
+      "building": "Здание",
+      "office": "Офис"
+    }
+  },
+    "properties": {
+    "title": "Характеристики",
+    "city": "Город",
+    "distric": "Район",
+    "rent_out": "Сдано",
+    "building": "Здания",
+    "office": "Офисы",
+    "avarage": "Средняя площадь",
+    "tax": "Налог",
+    "wonder": "Чудо",
+    "distric_state": "Состояние района",
+    "distric_ads": "Реклама района",
+    "distric_prestige": "Престиж района",
+    "rent_price": "Цена аренды, за м2",
+    "earned": "Получено районом",
+    "rating": "Рейтинг района"
+  },
+    "profile": {
+    "wallet": "Ваш кошелёк",
+    "crypto_wallet": "Крипто-кошелёк",
+    "balance": "Баланс профиля",
+    "deposit_btn": "Внести на внутренний кошелёк",
+    "assets": "Активы"
+  },
+    "modals": {
+    "deposit": {
+      "title": "Пополнение",
+      "label": "Баланс крипто-кошелька",
+      "input_placeholder": "Введите сумму для пополнения",
+      "deposit_btn": "Внести на внутренний кошелёк"
+    }
+  }
+}

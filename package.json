@@ -4,15 +4,23 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --host",
+    "build": "vite build && echo \"\\033[32m✓ build created at: $(date)\\033[0m\"",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ton/core": "^0.60.1",
+    "@ton/ton": "^15.2.1",
+    "@townsquarelabs/ui-vue": "^2.0.11-beta.0",
+    "axios": "^1.9.0",
+    "node-telegram-bot-api": "^0.66.0",
     "pinia": "^3.0.1",
+    "vite-plugin-node-polyfills": "^0.23.0",
     "vue": "^3.5.13",
+    "vue-demi": "^0.14.10",
+    "vue-i18n": "^11.1.5",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
@@ -24,6 +32,8 @@
     "eslint-plugin-vue": "~10.0.0",
     "globals": "^16.0.0",
     "prettier": "3.5.3",
+    "sass": "^1.89.1",
+    "sass-loader": "^16.0.5",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2"
   }
