@@ -8,7 +8,7 @@ const app = useAppStore()
 const mapRef = ref(null)
 
 const getMap = computed(() => {
-  return `src/assets/maps/${app.currentMap}/${app.currentMap}-1.webp`
+  return new URL(`../assets/maps/${app.currentMap}/${app.currentMap}-1.webp`, import.meta.url).href
 })
 
 const mapMarkers = ref([
@@ -39,5 +39,4 @@ onMounted(() => {
   </main>
 </template>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
