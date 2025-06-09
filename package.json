@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "overrides": {
+    "@vue/composition-api": {
+      "vue": "$vue"
+    }
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build && echo \"\\033[32m✓ build created at: $(date)\\033[0m\"",
