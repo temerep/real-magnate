@@ -2,9 +2,11 @@
 import { useI18n } from "vue-i18n"
 import { ref, computed } from 'vue';
 import { useAppStore } from '@/stores/app';
+import { useTelegram } from '@/services/telegram'
 
 
 const { t } = useI18n()
+const { tg } = useTelegram()
 const app = useAppStore()
 
 const getOfficeImg = (idx) => {
@@ -19,25 +21,29 @@ const cards = ref([
     name: 1,
     square: 5, 
     rarity: "Common",
-    price: 10
+    price: 10,
+    link: "https://getgems.io/"
   },
   {
     name: 2,
     square: 15, 
     rarity: "Rare",
-    price: 20
+    price: 20,
+    link: "https://getgems.io/"
   },
   {
     name: 3,
     square: 35, 
     rarity: "Epic",
-    price: 40
+    price: 40,
+    link: "https://getgems.io/"
   },
   {
     name: 4,
     square: 85, 
     rarity: "Legend",
-    price: 80
+    price: 80,
+    link: "https://getgems.io/"
   },
 ])
 
@@ -73,7 +79,7 @@ const cards = ref([
                   <label>{{t('shop.card.rarity')}} <span class="rarity" :class="{'rare': office.rarity == 'Rare', 'epic': office.rarity == 'Epic', 'legend': office.rarity == 'Legend'}">{{ office.rarity }}</span></label>
                   <label>{{t('shop.card.price')}} <span>{{ office.price }} TON</span></label>
                 </div>
-                <button class="mint-btn">{{t('shop.card.mint_btn')}}</button>
+                <button class="mint-btn" @click="tg.openLink(office.link)">{{t('shop.card.mint_btn')}}</button>
               </div>
             </div>
           </div>
@@ -108,9 +114,7 @@ const cards = ref([
   margin: 0 auto;
   border-radius: 20px 20px 0 0;
   border-top: 1px solid #ffffff26;
-  background:
-    linear-gradient(to bottom, #19191CD9, #19191CD9),
-    url("@/assets/shop-bg.jpg") no-repeat top;
+  background: #19191CD9;
   background-size: 100%;
 
 }
@@ -292,6 +296,7 @@ const cards = ref([
           }
           .mint-btn {
             border-radius: 100px;
+            border: none;
             padding: 5px 10px;
             height: 36px;
             width: 122px;
