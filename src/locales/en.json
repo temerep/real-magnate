@@ -40,6 +40,17 @@
     "deposit_btn": "Deposit to an internal wallet",
     "assets": "Assets"
   },
+    "shop": {
+      "title": "Office Shop",
+      "card": {
+        "name": "Office {office}",
+        "square": "Square:",
+        "square_input": "{square} m2",
+        "rarity": "Rarity:",
+        "price": "Price:",
+        "mint_btn": "Mint"
+      }
+  },
   "modals": {
     "deposit": {
       "title": "Deposit",

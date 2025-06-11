@@ -40,6 +40,17 @@
     "deposit_btn": "Внести на внутренний кошелёк",
     "assets": "Активы"
   },
+    "shop": {
+      "title": "Магазин",
+      "card": {
+        "name": "Офис {office}",
+        "square": "Квадратура:",
+        "square_input": "{square} м2",
+        "rarity": "Редкость:",
+        "price": "Цена:",
+        "mint_btn": "Минт"
+      }
+  },
     "modals": {
     "deposit": {
       "title": "Пополнение",
