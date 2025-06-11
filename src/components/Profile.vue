@@ -5,11 +5,13 @@ import DepositModal from './modals/DepositModal.vue';
 import { useI18n } from "vue-i18n"
 import { ref } from 'vue';
 import { useAppStore } from '@/stores/app';
+import { useRouter } from 'vue-router';
 
 
 const { t } = useI18n()
 const app = useAppStore()
 const openDepositModal = ref(false)
+const router = useRouter();
 
 </script>
 
@@ -20,7 +22,7 @@ const openDepositModal = ref(false)
       <section class="wallet">
         <div class="first-row">
           <h1 class="title">{{ t("profile.wallet") }}</h1>
-          <button class="close-btn"></button>
+          <button class="close-btn" @click="router.push({ path: '/' })"></button>
         </div>
         <div class="second-row">
           <LocaleSwitch style="flex:2" />
