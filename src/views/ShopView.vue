@@ -125,7 +125,7 @@ const cards = ref([
   gap: 10px;
   height: 100%;
   width: calc(100% - 40px);
-  padding: 14px 13px;
+  padding: 20px 0;
   margin: 0 auto;
 
   .scrollable {
