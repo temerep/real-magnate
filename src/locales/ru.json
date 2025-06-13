@@ -16,7 +16,7 @@
       "office": "Офис"
     }
   },
-    "properties": {
+  "properties": {
     "title": "Характеристики",
     "city": "Город",
     "distric": "Район",
@@ -33,25 +33,39 @@
     "earned": "Получено районом",
     "rating": "Рейтинг района"
   },
-    "profile": {
+  "profile": {
     "wallet": "Ваш кошелёк",
     "crypto_wallet": "Крипто-кошелёк",
     "balance": "Баланс профиля",
     "deposit_btn": "Внести на внутренний кошелёк",
     "assets": "Активы"
   },
-    "shop": {
-      "title": "Магазин",
-      "card": {
-        "name": "Офис {office}",
-        "square": "Квадратура:",
-        "square_input": "{square} м2",
-        "rarity": "Редкость:",
-        "price": "Цена:",
-        "mint_btn": "Минт"
-      }
+  "shop": {
+    "title": "Магазин",
+    "card": {
+      "name": "Офис {office}",
+      "square": "Квадратура:",
+      "square_input": "{square} м2",
+      "rarity": "Редкость:",
+      "price": "Цена:",
+      "mint_btn": "Минт"
+    }
   },
-    "modals": {
+  "earn": {
+    "title": "Реферальная система",
+    "ref_board": {
+      "friends": "{friends} ДРУЗЕЙ",
+      "invite_btn": "Пригласить",
+      "get_bonus_btn": "Получить бонус",
+      "ref_list_btn": "Список друзей"
+    },
+    "games": {
+      "comming": "Скоро будет",
+      "roulette": "Рулетка",
+      "fortune_wheel": "Колесо Фортуны"
+    }
+  },
+  "modals": {
     "deposit": {
       "title": "Пополнение",
       "label": "Баланс крипто-кошелька",

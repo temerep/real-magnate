@@ -37,7 +37,7 @@ const router = useRouter();
           <div class="tokens-list">
             <div class="tokens-list-item">
               <div class=item-left>
-                <img src="@/assets/profile/ton.svg" />
+                <img src="@/assets/common/ton.svg" />
                 <div class="item-left-data">
                   <label>Toncoin</label>
                   <span>{{ app?.tonBalance / 10 ** 9 || 0 }} TON</span>
@@ -49,7 +49,7 @@ const router = useRouter();
             </div>
             <div class="tokens-list-item">
               <div class=item-left>
-                <img src="@/assets/profile/rent.svg" />
+                <img src="@/assets/common/rent.svg" />
                 <div class="item-left-data">
                   <label>RealMAGNATE</label>
                   <span>{{
@@ -76,7 +76,7 @@ const router = useRouter();
           <div class="tokens-list">
             <div class="tokens-list-item">
               <div class=item-left>
-                <img src="@/assets/profile/rent.svg" />
+                <img src="@/assets/common/rent.svg" />
                 <div class="item-left-data">
                   <label>RealMAGNATE</label>
                   <span>4646 RENT</span>
@@ -156,7 +156,7 @@ const router = useRouter();
   border-top: 1px solid #ffffff26;
   background:
     linear-gradient(to bottom, #19191CD9, #19191CD9),
-    url("@/assets/profile-bg.jpg") no-repeat top;
+    url("@/assets/profile/profile-bg.jpg") no-repeat top;
   background-size: 100%;
 
 }
@@ -209,7 +209,7 @@ const router = useRouter();
         width: 30px;
         height: 30px;
         border: none;
-        background: url("@/assets/profile/close.svg") no-repeat center;
+        background: url("@/assets/common/close.svg") no-repeat center;
         background-size: 30px;
       }
     }

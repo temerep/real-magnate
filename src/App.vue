@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 import AppNav from '@/components/AppNav.vue';
 import TopNav from './components/TopNav.vue';
 import Statistic from './components/Statistic.vue';
-import { onMounted, onUnmounted, watch } from 'vue';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { useAppStore } from './stores/app';
 import { useTonAddress } from '@townsquarelabs/ui-vue';
 import { tonapi } from '../axios.config';
@@ -54,6 +54,16 @@ const updateData = async () => {
   }
 }
 
+const isNavVisible = ref(true)
+
+const handleNavVisibility = (val) => {
+  if(val.visibility == true){
+    isNavVisible.value = true
+  } else {
+    isNavVisible.value = false
+  }
+}
+
 onMounted(() => {
   app.init()
   updateData()
@@ -78,7 +88,7 @@ onUnmounted(() => {
 
 <template>
   <TopNav />
-  <RouterView />
-  <Statistic />
-  <AppNav />
+  <RouterView @hide-stats="handleNavVisibility" />
+  <Statistic v-if="isNavVisible" />
+  <AppNav v-if="isNavVisible"/>
 </template>

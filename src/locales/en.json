@@ -40,16 +40,30 @@
     "deposit_btn": "Deposit to an internal wallet",
     "assets": "Assets"
   },
-    "shop": {
-      "title": "Office Shop",
-      "card": {
-        "name": "Office {office}",
-        "square": "Square:",
-        "square_input": "{square} m2",
-        "rarity": "Rarity:",
-        "price": "Price:",
-        "mint_btn": "Mint"
-      }
+  "shop": {
+    "title": "Office Shop",
+    "card": {
+      "name": "Office {office}",
+      "square": "Square:",
+      "square_input": "{square} m2",
+      "rarity": "Rarity:",
+      "price": "Price:",
+      "mint_btn": "Mint"
+    }
+  },
+  "earn": {
+    "title": "Referral System",
+    "ref_board": {
+      "friends": "{friends} FRIENDS",
+      "invite_btn": "Invite",
+      "get_bonus_btn": "Get Bonus",
+      "ref_list_btn": "Friends List"
+    },
+    "games": {
+      "comming": "Comming Soon",
+      "roulette": "Roulette",
+      "fortune_wheel": "Fortune Wheel"
+    }
   },
   "modals": {
     "deposit": {
@@ -57,6 +71,18 @@
       "label": "Crypto Wallet Balance",
       "input_placeholder": "Enter amount for deposit",
       "deposit_btn": "Deposit to an internal wallet"
+    },
+    "friends": {
+      "title": "Friends List",
+      "search": "Seacrh",
+      "filters": {
+        "username": "Username",
+        "offices": "Offices",
+        "ton": "TON",
+        "rent": "5% RENT",
+        "lost": "Lost"
+      },
+      "invite_btn": "Copy Invite Link"
     }
   }
 }

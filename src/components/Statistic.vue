@@ -59,7 +59,7 @@ const getStatImg = (idx) => {
   height: 160px;
   background:
     linear-gradient(to bottom, #19191CD9, #19191CD9),
-    url("@/assets/nav-bg.jpg") no-repeat center;
+    url("@/assets/navigation/nav-bg.jpg") no-repeat center;
   background-size: cover;
   border-radius: 30px 30px 0 0;
   border-top: 1px solid #ffffff40;
@@ -127,7 +127,7 @@ const getStatImg = (idx) => {
       min-width: 24px;
       min-height: 24px;
       border: none;
-      background: url("@/assets/stats/info-circle.svg") no-repeat;
+      background: url("@/assets/common/info-circle.svg") no-repeat;
       background-size: 24px;
       opacity: 0.5;
     }

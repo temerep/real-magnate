@@ -68,7 +68,7 @@ const { t } = useI18n()
     padding: 4px 0;
     border-radius: 10px;
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;

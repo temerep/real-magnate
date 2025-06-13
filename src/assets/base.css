@@ -23,6 +23,7 @@ body {
    -webkit-user-select: none !important;
   user-select: none !important;
   trasition: all 200ms ease-in-out;
+  touch-action: none !important;
 }
 
 #app {

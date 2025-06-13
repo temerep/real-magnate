@@ -53,7 +53,7 @@ const emitClose = () => {
       <div class="content">
         <label>{{ t("modals.deposit.label") }}</label>
         <div class="deposit-token">
-          <img src="@/assets/profile/rent.svg" alt="" />
+          <img src="@/assets/common/rent.svg" alt="" />
           <div class="token-data">
             <h3>RealMAGNATE</h3>
             <span>235 RENT</span>
@@ -137,7 +137,7 @@ const emitClose = () => {
         right: 0;
         width: 36px;
         height: 36px;
-        background: url("@/assets/profile/close.svg") no-repeat right;
+        background: url("@/assets/common/close.svg") no-repeat right;
         background-size: 30px;
         border: none;
       }

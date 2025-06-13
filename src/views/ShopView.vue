@@ -13,6 +13,6 @@ import Shop from '@/components/Shop.vue';
   width: 100%;
   height: 100%;
   padding-top: 8px;
-  background: url("@/assets/view-bg.png") no-repeat top;
+  background: url("@/assets/view-bg.jpg") no-repeat top;
 }
 </style>

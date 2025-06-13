@@ -19,28 +19,28 @@ const getOfficeImg = (idx) => {
 const cards = ref([
   {
     name: 1,
-    square: 5, 
+    square: 5,
     rarity: "Common",
     price: 10,
     link: "https://getgems.io/"
   },
   {
     name: 2,
-    square: 15, 
+    square: 15,
     rarity: "Rare",
     price: 20,
     link: "https://getgems.io/"
   },
   {
     name: 3,
-    square: 35, 
+    square: 35,
     rarity: "Epic",
     price: 40,
     link: "https://getgems.io/"
   },
   {
     name: 4,
-    square: 85, 
+    square: 85,
     rarity: "Legend",
     price: 80,
     link: "https://getgems.io/"
@@ -55,7 +55,7 @@ const cards = ref([
       <section class="header-section">
         <div class="first-row">
           <span class="ton-balance">
-            <img src="@/assets/shop/ton.svg" alt=""/>
+            <img src="@/assets/common/ton.svg" alt="" />
             {{ +(app?.tonBalance / 10 ** 9).toFixed(2) || 0 }}
           </span>
           <h1 class="title">{{ t("shop.title") }}</h1>
@@ -71,15 +71,19 @@ const cards = ref([
           <div class="office-card" v-for="office in cards" :key="office.name">
             <h1 class="office-name">{{ t('shop.card.name', { office: office.name }) }}</h1>
             <div class="office-data">
-              <div class=img-wrapper :style="{backgroundImage: `url(${getOfficeImg(office.name)})`}">
+              <div class=img-wrapper :style="{ backgroundImage: `url(${getOfficeImg(office.name)})` }">
               </div>
               <div class="data-col">
                 <div class="labels">
-                  <label>{{t('shop.card.square')}} <span>{{t('shop.card.square_input', {square: office.square})}}</span></label>
-                  <label>{{t('shop.card.rarity')}} <span class="rarity" :class="{'rare': office.rarity == 'Rare', 'epic': office.rarity == 'Epic', 'legend': office.rarity == 'Legend'}">{{ office.rarity }}</span></label>
-                  <label>{{t('shop.card.price')}} <span>{{ office.price }} TON</span></label>
+                  <label>{{ t('shop.card.square') }} <span>{{ t('shop.card.square_input', {
+                    square:
+                      office.square})}}</span></label>
+                  <label>{{ t('shop.card.rarity') }} <span class="rarity"
+                      :class="{ 'rare': office.rarity == 'Rare', 'epic': office.rarity == 'Epic', 'legend': office.rarity == 'Legend' }">{{
+                      office.rarity }}</span></label>
+                  <label>{{ t('shop.card.price') }} <span>{{ office.price }} TON</span></label>
                 </div>
-                <button class="mint-btn" @click="tg.openLink(office.link)">{{t('shop.card.mint_btn')}}</button>
+                <button class="mint-btn" @click="tg.openLink(office.link)">{{ t('shop.card.mint_btn') }}</button>
               </div>
             </div>
           </div>
@@ -116,7 +120,6 @@ const cards = ref([
   border-top: 1px solid #ffffff26;
   background: #19191C; //D9
   background-size: 100%;
-
 }
 
 .shop {
@@ -182,7 +185,7 @@ const cards = ref([
         flex: 2;
       }
 
-      .placeholder{
+      .placeholder {
         flex: 1;
       }
 
@@ -192,7 +195,7 @@ const cards = ref([
         width: 30px;
         height: 30px;
         border: none;
-        background: url("@/assets/shop/info.svg") no-repeat center;
+        background: url("@/assets/common/info-circle.svg") no-repeat center;
         background-size: 30px;
       }
     }
@@ -205,7 +208,7 @@ const cards = ref([
     }
   }
 
-  .content-section{
+  .content-section {
     position: relative;
     display: flex;
     width: calc(100% - 30px);
@@ -218,8 +221,8 @@ const cards = ref([
       border-radius: 15px;
       border: 1px solid transparent !important;
       background:
-      linear-gradient(180deg, #303033, #303033) padding-box,
-      linear-gradient(180deg, #A0FAFB, #D3FF9E) border-box;
+        linear-gradient(180deg, #303033, #303033) padding-box,
+        linear-gradient(180deg, #A0FAFB, #D3FF9E) border-box;
       padding: 14px 15px;
       display: flex;
       flex-direction: column;
@@ -249,6 +252,7 @@ const cards = ref([
           background-repeat: no-repeat;
           border: 1px solid #FFFFFF40
         }
+
         .data-col {
           width: 100%;
           display: flex;
@@ -269,7 +273,7 @@ const cards = ref([
               line-height: 22px;
               letter-spacing: 0px;
               text-wrap: nowrap;
-  
+
               span {
                 color: #fff;
                 font-family: Arial, sans-serif;
@@ -281,12 +285,15 @@ const cards = ref([
 
                 &.rarity {
                   color: #A0FAFB;
+
                   &.rare {
                     color: #FFCC00;
                   }
+
                   &.epic {
                     color: #f542ec;
                   }
+
                   &.legend {
                     color: #8d42f5;
                   }
@@ -294,6 +301,7 @@ const cards = ref([
               }
             }
           }
+
           .mint-btn {
             border-radius: 100px;
             border: none;
