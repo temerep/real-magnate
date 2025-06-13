@@ -63,6 +63,21 @@ const transformStyle = computed(() => {
   }
 })
 
+// Масштаб для маркерів (пропорційний до поточного зуму)
+const markerScale = computed(() => {
+  return scale.value / minScale.value
+})
+
+// Стиль для маркерів з пропорційним масштабуванням
+const getMarkerStyle = (marker) => {
+  return {
+    left: (marker.x * scale.value + translateX.value) + 'px',
+    top: (marker.y * scale.value + translateY.value) + 'px',
+    // transform: `translate(-50%, -50%) scale(${markerScale.value})`,
+    transformOrigin: 'center center'
+  }
+}
+
 // Оновлення розмірів контейнера
 const updateContainerSize = () => {
   if (mapContainer.value) {
@@ -88,7 +103,7 @@ const resetPosition = () => {
     return
   }
 
-  // scale.value = minScale.value
+  scale.value = minScale.value
 
   const scaledWidth = imageWidth.value * scale.value
   const scaledHeight = imageHeight.value * scale.value
@@ -118,7 +133,7 @@ const constrainTranslation = () => {
   } else {
     translateY.value = Math.max(minTranslateY, Math.min(maxTranslateY, translateY.value))
   }
-} 
+}
 
 // Обмеження масштабу
 const constrainScale = () => {
@@ -238,8 +253,8 @@ watch(minScale, () => {
   if (scale.value < minScale.value) { resetPosition() }
 }) // Lifecycle
 onMounted(() => {
-  updateContainerSize()
   loadImage()
+  updateContainerSize()
 
   window.addEventListener('resize', handleResize)
 
@@ -278,33 +293,31 @@ onUnmounted(() => {
 </script>
 <template>
   <div ref="mapContainer" class="map-container">
-    <img ref="mapImage" class="map-image" :src="imageUrl" :style="transformStyle" alt="Interactive Map" draggable="false" />
+    <img ref="mapImage" class="map-image" :src="imageUrl" :style="transformStyle" alt="Interactive Map"
+      draggable="false" />
 
     <!-- Маркери -->
-    <div class="map-markers" v-for="(marker, index) in markers" :key="index" :style="{
-      left: (marker.x * scale + translateX) + 'px',
-      top: (marker.y * scale + translateY) + 'px'
-    }">
+    <div class="map-markers" v-for="(marker, index) in markers" :key="index" :style="getMarkerStyle(marker)">
       <div class="marker-point"></div>
       <div class="marker-details" v-if="marker.label">
         <h1 class="marker-label">{{ marker.label }}</h1>
         <div class="marker-data">
           <div class="marker-data-item">
-            <img class="icon" src="@/assets/stats/stat1.png" alt=""/>
+            <img class="icon" src="@/assets/stats/stat1.png" alt="" />
             <div class="stats">
               <label>56745</label>
               <span>(+50%)</span>
             </div>
           </div>
-                    <div class="marker-data-item">
-            <img class="icon" src="@/assets/stats/stat2.png" alt=""/>
+          <div class="marker-data-item">
+            <img class="icon" src="@/assets/stats/stat2.png" alt="" />
             <div class="stats">
               <label>56745</label>
-              <span>(+50%)</span>
+              <span class="decr">(-50%)</span>
             </div>
           </div>
-                    <div class="marker-data-item">
-            <img class="icon" src="@/assets/stats/stat3.png" alt=""/>
+          <div class="marker-data-item">
+            <img class="icon" src="@/assets/stats/stat3.png" alt="" />
             <div class="stats">
               <label>56745</label>
               <span>(+50%)</span>
@@ -336,19 +349,20 @@ onUnmounted(() => {
 
   .map-markers {
     position: absolute;
-    transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 10;
+    // z-index: 10;
+    // Додали плавний перехід для зміни масштабу маркерів
+    transition: transform 0.3s ease-out;
 
     .marker-point {
       position: relative;
-      width: 40px;
-      height: 40px;
-      background: 
-      linear-gradient(to bottom, #fff, #fff) padding-box,
-      linear-gradient(to bottom, #00000050, #00000050) border-box
-      ;
-      border: 7px solid transparent;
+      width: 27px;
+      height: 27px;
+      z-index: 10;
+      background:
+        linear-gradient(to bottom, #fff, #fff) padding-box,
+        linear-gradient(to bottom, #00000050, #00000050) border-box;
+      border: 6px solid transparent;
       border-radius: 50%;
 
       &::before {
@@ -357,8 +371,8 @@ onUnmounted(() => {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 15px;
-        height: 15px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background: #26A9E0;
         z-index: 50;
@@ -367,22 +381,25 @@ onUnmounted(() => {
 
     .marker-details {
       position: absolute;
-      bottom: 40px;
-      left: 100%;
+      bottom: 30px;
+      left: 70%;
       background: rgba(0, 0, 0, 0.8);
       padding: 8px 20px;
       border-radius: 18px;
+      z-index: 20;
 
       .marker-label {
         color: #fff;
         font-family: Inter, sans-serif;
         font-weight: 500;
         font-size: 20px;
-        line-height: 36.47px;
+        line-height: 36.5px;
         letter-spacing: -0.97px;
         text-align: center;
-        margin-bottom: 11px;
+        margin-bottom: 5px;
+        text-wrap: nowrap;
       }
+
       .marker-data {
         display: flex;
         flex-direction: column;
@@ -400,6 +417,7 @@ onUnmounted(() => {
             width: 33px;
             height: 33px;
           }
+
           .stats {
             display: flex;
             flex-direction: column;
@@ -407,20 +425,23 @@ onUnmounted(() => {
             label {
               color: #fff;
               font-family: Inter, sans-serif;
-font-weight: 500;
-font-size: 15.73px;
-line-height: 16.85px;
-letter-spacing: -0.45px;
+              font-weight: 500;
+              font-size: 15.73px;
+              line-height: 16.85px;
+              letter-spacing: -0.45px;
             }
 
             span {
-               color: #fff;
+              color: #D3FF9E;
               font-family: Inter, sans-serif;
-font-weight: 500;
-font-size: 11.23px;
-line-height: 16.85px;
-letter-spacing: -0.45px;
+              font-weight: 500;
+              font-size: 11.23px;
+              line-height: 16.85px;
+              letter-spacing: -0.45px;
 
+              &.decr {
+                color: #FF9E9E;
+              }
             }
           }
         }
